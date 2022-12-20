@@ -1,0 +1,87 @@
+//Forms
+
+@mixin titleForm() {
+	text-transform: uppercase;
+	color: $color-light;
+	font-size: rem(18);
+	font-weight: 600;
+}
+
+@mixin labelsForm() {
+	color: $color-light;
+	font-size: rem(14);
+}
+
+@mixin boxesForm() {
+	border: solid 3px $color-main;
+	height: rem(30);
+	margin-top: rem(7);
+	font-size: rem(14);
+	padding-left: rem(10);
+	margin-bottom: rem(18);
+}
+
+@mixin imagesForm() {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+@mixin arrow() {
+	color: $color-light;
+	font-size: 18px;
+	text-align: right;
+	cursor: pointer;
+}
+
+@mixin iconForm() {
+	color: $color-main;
+	transform: translateY(2.5px); // to be checked - M
+	width: rem(21);
+	height: rem(18);
+}
+
+@mixin iconLanding() {
+	color: $color-main;
+	font-size: rem(28);
+	/* width: rem(32);
+	height: rem(26); */
+	@media all and (min-width: 768px) {
+		/* height: rem(29); */
+		font-size: rem(28);
+	}
+}
+
+@mixin resetBorderForm() {
+	width: rem(280);
+	border: 0;
+	border-bottom: rem(1);
+	border-color: $color-light;
+	border-bottom: 1px solid $color-light-grey-margins;
+	@media all and (min-width: 768px) {
+		width: rem(328);////to avoid making the form small
+	}
+}
+
+@mixin createCardButton() {
+	cursor: pointer;
+	margin-bottom: rem(30);
+	margin-top: 33px;
+	padding: 13px 18px 13px 17px;
+	color: $color-light;
+	border-radius: 12px;
+	font-weight: 600;
+	box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+	.inputSubmit{
+		cursor: pointer;
+		font-family: $font-familyOpenSans;
+		font-size: rem(18);
+		font-weight: 600;
+		text-transform: uppercase;
+		border: 0px solid transparent;
+		background-color: inherit;
+		color: inherit;
+		padding: 5px 0px 5px 0px; 
+	}
+}

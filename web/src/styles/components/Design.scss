@@ -1,0 +1,102 @@
+@import '../core/variables';
+@import '../core/reset';
+@import '../core/functions';
+@import '../core/mixins';
+@import '../core/javascript';
+
+.design {
+  @include resetBorderForm;
+  &__head {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    &__intro {
+      display: flex;
+      gap: rem(10);
+      margin-bottom: rem(30);
+      &__icon {
+        order: -1;
+        @include iconForm();
+      }
+      &__title {
+        @include titleForm();
+      }
+    }
+    &__arrow {
+      @include arrow();
+    }
+  }
+  &__palette {
+    margin-bottom: rem(20);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: rem(5);
+    &__p {
+      color: $color-light;
+      font-size: rem(14);
+      text-transform: uppercase;
+      grid-column: 1/2;
+      grid-row: 1/2;
+      margin-left: rem(25);
+    }
+    &__box {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      display: flex;
+      justify-self: end;
+      margin-bottom: rem(15);
+      &--1 {
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+      &--2 {
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+      &--3 {
+        grid-column: 2/3;
+        grid-row: 3/4;
+      }
+      &--1left {
+        background-color: $color-dark-green-blue;
+      }
+      &--1middle {
+        background-color: $color-dirty-blue;
+      }
+      &--1right {
+        background-color: $color-hospital-green;
+      }
+      &--2left {
+        background-color: $color-dried-blood;
+      }
+      &--2middle {
+        background-color: $color-rusty-red;
+      }
+      &--2right {
+        background-color: $color-tomato;
+      }
+      &--3left {
+        background-color: $color-slate;
+      }
+      &--3middle {
+        background-color: $color-faded-orange;
+      }
+      &--3right {
+        background-color: $color-light-grey-blue;
+      }
+      &--selector {
+        cursor: pointer;
+        margin-right: rem(10); //how to change the dot in radio
+      }
+    }
+  }
+}
+.minibox {
+  width: 30px;
+  height: 25px;
+}
+
+.collapsed {
+  display: none;
+}

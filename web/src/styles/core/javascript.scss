@@ -1,0 +1,60 @@
+.js-hidden{
+    display: none;
+}
+
+.js-invalid-msg{
+    font-size: rem(11);
+    transform: translateY(-80%);
+    color: $color-light-op;
+}
+
+.js-alert-box{
+    /*General properties*/
+    width: rem(380);
+    height: rem(200);
+    border-radius: rem(20);
+    background-image: url(../../images/transparent-minion.png);
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-position: rem(30) center;
+    background-color: $color-main;
+    padding-left: rem(90);
+    /*Font*/
+    font-size: rem(14);
+    text-align: center;
+    /*Position*/
+    position: absolute;
+    top: 35%;
+    left: 36%;
+    /*Display*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: rem(25);
+}
+
+.js-alert-text{
+    width: 70%;
+}
+
+.js-alert-btn{
+    /*Cursor*/
+    cursor: pointer;
+    /*General properties*/
+    width: rem(100);
+    height: rem(25);
+    background-color: $color-extra;
+    border: none;
+    border-radius: rem(5);
+    /*Font*/
+    color: $color-light;
+    font-size: rem(14);
+    &:hover{
+        background-color: $color-second;
+    }
+}
+
+.js-remove{
+    display: none;
+}

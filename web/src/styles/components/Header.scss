@@ -1,0 +1,24 @@
+@import '../core/variables';
+@import '../core/reset';
+@import '../core/functions';
+@import '../core/mixins';
+@import '../core/javascript';
+
+.header__cards{
+    background-color: $color-main;
+    height: 13vh;
+    display: flex;
+    align-items: center;
+    padding-left: rem(40);
+    &--profile{
+        width: rem(201);
+        height: rem(50);
+    }
+}
+/*
+.profile-cards{
+    margin: rem(31) rem(79) rem(30) rem(40);
+    @media all and (min-width: 768px) {
+        margin: rem(31) rem(525) rem(30) rem(40); 
+    }
+}*/

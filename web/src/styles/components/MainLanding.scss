@@ -1,0 +1,99 @@
+@import '../core/variables';
+@import '../core/reset';
+@import '../core/functions';
+@import '../core/mixins';
+@import '../core/javascript';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__h1 {
+    font-family: $font-familyMerriWeather;
+    color: $color-main;
+    font-size: rem(19.2);
+    font-weight: 900;
+    margin-top:  rem(35.4);
+    @media all and (min-width: 768px) {
+      font-size: rem(24);
+      margin-top: rem(31);
+    }
+  }
+  &__subtitle {
+    max-width: rem(268); 
+    text-align: center;
+    font-size: rem(12.8);
+    color: $color-light;
+    @media all and (min-width: 768px) {
+      max-width: rem(320);
+      font-size: rem(16);
+    }
+  }
+}
+
+
+.box {
+  width: rem(268); 
+  height: rem(78.8);
+  padding: rem(15) rem(20) rem(17) rem(31);
+  border: solid rem(1.6) $color-extraop;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: rem(34) rem(24);
+  align-items: center;
+  margin-top: rem(17.8);
+  border-radius: 4px;
+  color: $color-light;
+  @media all and (min-width: 768px) {
+    border: solid rem(2) $color-extraop;
+    margin-top: rem(27);
+    width: rem(325); 
+    height: rem(86);
+
+  }
+
+  &__text {
+    font-size: rem(12.8);
+    @media all and (min-width: 768px) {
+      font-size: rem(16);
+    }
+  }
+  .icon-main {
+    @include iconLanding();
+  }
+}
+.spanFlexText{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+  
+}
+
+.start {
+  padding: rem(10) rem(20) rem(10) rem(20);
+  margin-top:  rem(38.6);
+  align-items: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $color-light;
+  border-radius: 21px;
+  background-color: $color-extra;
+  @media all and (min-width: 768px) {
+    //margin-top:rem(186);
+  
+  }
+  &:hover {
+
+    background-color:$color-third;
+    transform: scale(1.1, 1.1);
+    transition: transform 2s;
+  }
+  &:not(:hover) {
+    transition: transform 2s;
+  }
+}

@@ -1,0 +1,47 @@
+@import '../core/variables';
+@import '../core/reset';
+@import '../core/functions';
+@import '../core/mixins';
+@import '../core/javascript';
+
+.footer{
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $color-main;
+    border-top: 1px solid $color-light-grey-margins;
+    padding: 18px 61px 20px 61px;
+    @media all and (min-width: 768px) {
+        height: 10vh;
+        flex-direction: row;   
+        justify-content: space-between;
+        align-items: center;
+        padding-left: rem(40);
+        padding-right: rem(40);
+        /*margin: -8px; */
+        //padding: 10px 40px 10px 40px;
+        }
+    }
+
+.copy{
+    transform: translateY(10px);
+    font-family: $font-familyOpenSans;
+    font-size: rem(14);
+    color: $color-second;
+    @media all and (min-width: 768px) {
+        transform: translateY(0px);   
+    }
+
+}
+
+.logo{
+    width: rem(103);
+    height: rem(40);
+    margin-top: rem(12);
+    @media all and (min-width: 768px) {
+        //width: 108px;
+        margin-top: 0px;
+    }
+}

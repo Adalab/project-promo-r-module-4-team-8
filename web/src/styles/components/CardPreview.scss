@@ -1,0 +1,201 @@
+@import '../core/variables';
+@import '../core/reset';
+@import '../core/functions';
+@import '../core/mixins';
+@import '../core/javascript';
+
+/*General section*/
+.preview{
+    /*General properties for main container*/
+    background-image: url(../../images/mesa-de-trabajo1.png);
+    min-height: rem(457);
+    height: fit-content;
+    padding-top: rem(40);
+    padding-bottom: rem(40);
+    /*Flexbox*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*Secondary container for wrapping items, position left*/
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: rem(20);
+    }
+    /*Media queries for main*/
+    @media screen and (min-width:768px) {
+        flex-grow: 1;
+        height: inherit; 
+        border-radius: rem(6);     
+    }
+}
+
+/*Reset button*/
+.reset{
+    cursor: pointer;
+    /*General properties*/
+    width: rem(75);
+    height: rem(30);
+    border-radius: rem(15);
+    border: 1px solid $color-light;
+    background-color: #ffffff55;
+    /*Flexbox*/
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: rem(6);
+    /*Font properties*/
+    color: $color-gunmetal;
+    font-size: rem(11);
+    text-transform: uppercase;
+    &:hover{
+        background-color: $color-light;
+    }
+}
+
+/*Article section*/
+.article{
+    /*General properties*/
+    width: rem(240);
+    height: rem(329);
+    height: fit-content;
+    background-color: $color-light;
+    box-shadow: 0 0 rem(3) 0 rgba(0, 0, 0, 0.35), 0 0 rem(10) 0 rgba(0, 0, 0, 0.2);
+    /*Flexbox*/
+    display: flex;
+    flex-direction: column;
+    padding-top: rem(15);
+    padding-bottom: rem(15);
+    /*Header: title & subtitle*/
+    &__header{ 
+        border-left: rem(5) solid; /*Variable color javascript*/
+        padding-left: rem(20);
+        padding-right: rem(20);
+        overflow-wrap: break-word;
+        &--title{
+            font-family: $font-Montserrat;
+            font-size: rem(18);
+            font-weight: bold;
+            padding-bottom: rem(4);
+        }
+        &--subtitle{
+            color: $color-gunmetal;
+            font-family: $font-Montserrat;
+            font-size: rem(16);
+            font-weight: 500;
+        }
+    }
+    /*Photo*/
+    &__photo{
+        height: 200px;
+        background-image: url(../../images/b8766cd53b5e1529712ed7e49365b7d4.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        margin-top: rem(15);
+        margin-bottom: rem(15);
+    }
+    /*Navigation menu*/
+    &__nav{
+        &--list{
+            list-style: none;
+            /*Flexbox for list items*/
+            display: flex;
+            margin-left: rem(20);
+            gap: rem(10);
+        }
+        &--link{
+            text-decoration: none;
+            width: rem(32);
+            height: rem(32);
+            border-radius: 50%;
+            border: 2px solid; 
+            /*Flexbox to place icons*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+//Color palette base
+
+.paletteBase{
+    .article__header{
+        border-left-color: $color-dirty-blue;
+    } 
+    .article__header--title{
+        color: $color-dark-green-blue; 
+    }
+    .article__nav--link{
+        border-color: $color-hospital-green; 
+        color: $color-dark-green-blue; 
+        &:hover{
+            border-color:$color-dark-green-blue;
+            color: $color-hospital-green;
+        }
+    }
+}
+
+//Color palette 1
+
+.palette-1{
+    .article__header{
+        border-left-color: $color-dirty-blue;
+    } 
+    .article__header--title{
+        color: $color-dark-green-blue; 
+    }
+    .article__nav--link{
+        border-color: $color-hospital-green; 
+        color: $color-dark-green-blue; 
+        &:hover{
+            border-color:$color-dark-green-blue;
+            color: $color-hospital-green;
+        }
+    }
+}
+
+
+//Color palette 2
+
+.palette-2{
+    .article__header{
+        border-left-color: $color-rusty-red; 
+    } 
+    .article__header--title{
+        color: $color-dried-blood; 
+    }
+    .article__nav--link{
+        border-color: $color-tomato; 
+        color: $color-dried-blood; 
+        &:hover{
+            border-color:$color-dried-blood;
+            color: $color-tomato;
+        }
+    }
+}
+
+//Color palette 3
+
+.palette-3{
+    .article__header{
+        border-left-color: $color-faded-orange; 
+    } 
+    .article__header--title{
+        color: $color-slate; 
+    }
+    .article__nav--link{
+        border-color: $color-light-grey-blue; 
+        color: $color-slate; 
+        &:hover{
+            border-color: $color-slate;
+            color: $color-light-grey-blue;
+        }
+    }
+}
+ //Image
+.profile__image {
+    @include imagesForm();
+    }

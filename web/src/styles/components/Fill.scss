@@ -1,0 +1,79 @@
+@import '../core/variables';
+@import '../core/reset';
+@import '../core/functions';
+@import '../core/mixins';
+@import '../core/javascript';
+
+.fill {
+  @include resetBorderForm;
+  &__head {
+    cursor: pointer;
+    margin-top: rem(10);
+    display: flex;
+    justify-content: space-between;
+    &__intro {
+      display: flex;
+      gap: rem(10);
+      margin-bottom: rem(30);
+      &__icon {
+        @include iconForm();
+      }
+      &__title {
+        @include titleForm();
+      }
+    }
+    &__arrow {
+      @include arrow();
+    }
+  }
+  &__div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: rem(12);
+    &__label {
+      @include labelsForm();
+    }
+    &__input {
+      @include boxesForm();
+    }
+    &__boxes {
+      display: flex;
+      gap: rem(20);
+      align-items: center;
+      margin-top: rem(7);
+      margin-bottom: rem(20);
+      &__orange {
+        cursor: pointer;
+        border-radius: 3px;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+        background-color: $color-extra;
+        color: $color-light;
+        font-size: rem(14);
+        text-align: center;
+        padding: 3px 22px 7px 22px;
+      }
+      &__empty {
+        @include boxesForm();
+        width: rem(30);
+        height: rem(30);
+        margin: 0;
+        background-image: url(../../images/b8766cd53b5e1529712ed7e49365b7d4.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+    }
+  }
+}
+//Hide action button for insert photo
+.action__hiddenField {
+  display: none;
+}
+//Image in small box
+.profile__preview {
+  @include imagesForm();
+}
+
+.collapsed {
+  display: none;
+}

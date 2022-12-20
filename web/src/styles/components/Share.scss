@@ -1,0 +1,126 @@
+@import '../core/variables';
+@import '../core/reset';
+@import '../core/functions';
+@import '../core/mixins';
+@import '../core/javascript';
+
+.share {
+  @include resetBorderForm;
+  &__head {
+    cursor: pointer;
+    margin-top: rem(10);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(30);
+    align-items: center;
+
+    &__intro {
+      display: flex;
+      align-items: center;
+      gap: rem(10);
+      &__icon {
+        @include iconForm();
+      }
+      &__title {
+        //mixin
+        @include titleForm();
+      }
+    }
+    &__arrow {
+      @include arrow();
+    }
+  }
+
+  &__div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .createbutton-of {
+      @include createCardButton();
+      background-color: $color-grey;
+    }
+    .createbutton-on {
+      @include createCardButton();
+      background-color: $color-extra;
+      &:hover {
+        transform: scale(1.1, 1.1);
+        transition: transform 2s;
+      }
+      &:not(:hover) {
+        transition: transform 2s;
+      }
+    }
+    .icon-id {
+      color: $color-light;
+      margin-right: rem(9);
+    }
+    .lineRectangle {
+      border-width: 0;
+      border-top: rem(1) solid $color-light-grey-margins;
+      width: rem(280);
+      margin-bottom: rem (29);
+      @media all and (min-width: 768px) {
+        width: rem(329);
+      }
+    }
+    .shareresultbox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 	width: rem(400); */
+      &__text {
+        color: $color-light;
+        font-size: rem(18);
+        margin-top: rem(20);
+        margin-bottom: rem(5);
+      }
+      &__link {
+        font-size: rem(12);
+        color: $color-main;
+        text-decoration: none;
+        width: 100%;
+        text-align: center;
+      }
+      &__twitterbox {
+        background-color: #00a0f5;
+        display: flex;
+        justify-content: center;
+        margin-bottom: rem(30);
+        margin-top: rem(10);
+        border-radius: 3px;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+        &--twitter {
+          text-decoration: none;
+          color: $color-light;
+          padding: 3px 9px 6px 10.5px;
+          font-size: rem(14);
+          line-height: 1.43;
+        }
+      }
+    }
+
+    .tweet-icon {
+      align-items: center;
+      font-size: rem(18);
+      margin-right: rem(6.5);
+      margin-top: rem(6);
+    }
+
+    .sharetwitter-text {
+      font-size: rem(14);
+      background-color: #00a0f5;
+      color: $color-light;
+      border: none;
+      margin-bottom: rem(6);
+    }
+  }
+
+  .collapsed {
+    display: none;
+  }
+}
+
+.collapsed {
+  display: none;
+}

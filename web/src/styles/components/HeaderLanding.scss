@@ -1,0 +1,24 @@
+@import '../core/variables';
+@import '../core/reset';
+@import '../core/functions';
+@import '../core/mixins';
+@import '../core/javascript';
+
+.header-landing{
+
+}
+
+.profile-cardslanding{
+    margin-top: rem(95) ;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;       
+    width: rem(250); 
+    @media all and (min-width: 768px) {
+        width: rem(420); 
+     }
+
+}
+

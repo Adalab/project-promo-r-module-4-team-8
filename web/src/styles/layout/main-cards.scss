@@ -1,0 +1,28 @@
+/*.body__cards{
+    @media all and (min-width: 768px){
+    height: 100vh;
+    }
+}*/
+
+.main__cards{
+    min-height: 79vh;
+    background-color: $color-second;
+    @media all and (min-width: 768px) {
+        
+        min-height: 77vh;
+        display: flex;
+        flex-direction: row-reverse;
+        padding: rem(20) rem(40) rem(20) rem(40);
+        gap: rem(40);
+    }
+    &--section{
+        display: flex;
+        justify-content: center;
+  
+        padding: rem(27) rem(20) rem(31) rem(20);
+        @media all and (min-width: 768px) {
+            width: rem(329);
+            margin: 0;
+        }
+    }
+}

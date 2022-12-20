@@ -1,0 +1,14 @@
+@import 'core/variables';
+@import 'core/reset';
+@import 'core/functions';
+@import 'core/mixins';
+@import 'core/javascript';
+@import 'layout/mainpage';
+@import 'layout/main-cards';
+
+.collapsed {
+  display: none;
+}
+.flip{
+transform: rotate(180deg);
+}
