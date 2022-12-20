@@ -1,7 +1,7 @@
 const callToApi = (data) => {
   // Llamamos a la API
 
-  return fetch('https://dev.adalab.es/api/card', {
+  return fetch('http://localhost:4000/card', {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
@@ -10,6 +10,7 @@ const callToApi = (data) => {
   })
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       return data;
       //importante retornar siempre el fetch
     })
