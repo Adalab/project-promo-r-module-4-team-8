@@ -2,6 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const { response } = require('express');
 const { uuid } = require('uuidv4');
+const {v4:uuidv4} = require('uuid');
+
+
 
 // create and config server
 const server = express();
@@ -42,7 +45,7 @@ server.post('/card', (req, res) => {
   } else {
     //Si todo corecto: creo la tarejta y envío la respuesta
     const newCard = {
-     id: uuid(),
+     id: uuidv4(),
       ...req.body,
     }
     //Guardar newCard en la base de datos
@@ -50,7 +53,7 @@ server.post('/card', (req, res) => {
     
     //Response:respuesta si todo va bien
     const responseSuccess = {
-      cardURL: `https://dev.adalab.es/card/${newCard.id}`,
+      cardURL: `http://localhost:4000/card/${newCard.id}`,
       success: true,
     };
 
