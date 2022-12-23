@@ -2,14 +2,21 @@ const express = require('express');
 const cors = require('cors');
 const { response } = require('express');
 const { uuid } = require('uuidv4');
-const {v4:uuidv4} = require('uuid');
-
-
+const { v4: uuidv4 } = require('uuid');
+const Database = require('better-sqlite3');
 
 // create and config server
 const server = express();
 server.use(cors());
 server.use(express.json({ limit: '25mb' }));
+server.set('view engine', 'ejs');
+
+// Database
+
+const db = new Database('./src/db/cards.db', {
+  verbose: console.log,
+});
+
 
 // init express aplication
 const serverPort = 4000;
@@ -19,6 +26,8 @@ server.listen(serverPort, () => {
 
 //Base de datos falsa
 const savedCards = [];
+
+// Endpoints 
 
 server.post('/card', (req, res) => {
   //req body
@@ -63,11 +72,24 @@ server.post('/card', (req, res) => {
 });
 
 
-/* server.get('/', (req, res) => {
-  res.send('holisss');
-}); */
+server.get('/card/:cardId', (req, res) => {
+  const id = req.params.cardId;
+  const query = db.prepare('SELECT * FROM cards WHERE id = ?');
+  const userCard = query.get(id);
+  res.render('cards', userCard);
+});
+
+
 
 //Servidor estáticos
 
-const staticServerPath = './src/public-react'
-server.use(express.static(staticServerPath))
+const staticServerPath = './src/public-react';
+server.use(express.static(staticServerPath));
+
+const staticServerCssPath = 'src/public-css';
+server.use(express.static(staticServerCssPath));
+
+
+
+
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Rubik:wght@500&display=swap"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="/main.css"/>
+    <title>Card</title>
+  </head>
+
+  <body class="body">
+    <section class="preview">
+      <div class="preview__content">
+        <article class="article js-article palette-1">
+          <div class="article__header">
+            <h1 class="article__header--title js-article-title">
+              <%= name %>
+            </h1>
+            <h2 class="article__header--subtitle js-article-subtitle">
+                <%= job %>
+            </h2>
+          </div>
+          <div
+            class="article__photo js-article-photo js__profile-image profile__image"
+            style="
+              background-image: url('<%= photo %>');
+              background-size: cover;
+            "
+          ></div>
+          <nav class="article__nav">
+            <ul class="article__nav--list">
+              <li>
+                <a class="article__nav--link js-article-link-phone" href="tel: <%= phone %> "
+                  ><i class="fa-solid fa-mobile-screen-button fa-md"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="article__nav--link js-article-link-mail"
+                  href="mailto: <%= email %> "
+                  ><i class="fa-regular fa-envelope fa-md"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="article__nav--link js-article-link-linkedin"
+                  href="https://www.linkedin.com/in/<%= linkedin %>"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><i class="fa-brands fa-linkedin-in fa-md"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="article__nav--link js-article-link-github"
+                  href="https://github.com/<%= github %>"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><i class="fa-brands fa-github-alt fa-md"></i
+                ></a>
+              </li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </body>
+</html>
