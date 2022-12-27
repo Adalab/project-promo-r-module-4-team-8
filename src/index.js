@@ -19,7 +19,7 @@ const db = new Database('./src/db/cards.db', {
 });
 
 // init express aplication
-//NUEVO: hemos hecho cuenta en Railway y hemos importado el repo. Sustituimos el puerto inicial por el puerto que nos indica el Railway pero añadimos ese operador logico para en caso de que no funcione uno que funcione el otro.
+//NUEVO: hemos hecho cuenta en Railway y hemos importado el repo. Sustituimos el puerto inicial por el puerto que nos indica el Railway pero añadimos ese operador logico para en caso de que no funcione uno que funcione el otro. Se guarda todo en la base de datos de la nube
 const serverPort = process.env.PORT || 4000;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
