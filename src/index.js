@@ -5,7 +5,7 @@ const { uuid } = require('uuidv4');
 const { v4: uuidv4 } = require('uuid');
 const Database = require('better-sqlite3');
 
-console.log(process.env);
+console.log(process.env.PORT);
 
 // create and config server
 const server = express();
@@ -19,7 +19,7 @@ const db = new Database('./src/db/cards.db', {
 });
 
 // init express aplication
-const serverPort = 4000;
+const serverPort = process.env.PORT || 4000;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
@@ -70,7 +70,7 @@ server.post('/card', (req, res) => {
 
     //Response:respuesta si todo va bien
     const responseSuccess = {
-      cardURL: `http://localhost:4000/card/${result.lastInsertRowid}`,
+      cardURL: `https://project-promo-r-module-4-team-8-production.up.railway.app/card/${result.lastInsertRowid}`,
       success: true,
     };
 
