@@ -19,6 +19,7 @@ const db = new Database('./src/db/cards.db', {
 });
 
 // init express aplication
+//NUEVO: hemos hecho cuenta en Railway y hemos importado el repo. Sustituimos el puerto inicial por el puerto que nos indica el Railway pero añadimos ese operador logico para en caso de que no funcione uno que funcione el otro.
 const serverPort = process.env.PORT || 4000;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
@@ -51,9 +52,11 @@ server.post('/card', (req, res) => {
     res.json(responseError);
   } else {
     //Si todo corecto: creo la tarejta y envío la respuesta
+    //NUEVO: modificamos new card para que sea igual al req body y le quitamos el id porque ya se crea en la base de datos
     const newCard = req.body;
 
     //Guardar newCard en la base de datos
+    //NUEVO: Insertamos New Card en base de datos. Definimos los campos a volcar en el prepare y en el run los metemos con los datos de New Card
     const insertStmt = db.prepare(
       'INSERT INTO cards (palette, name, job, phone, email, linkedin, github, photo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
     );
@@ -69,6 +72,7 @@ server.post('/card', (req, res) => {
     );
 
     //Response:respuesta si todo va bien
+    //NUEVO: obtenemos y accedemos al id de la tarjeta que hay en la base de datos cogiendo la propiedad "lastinsertrowid" que nos devuelve el INSERT al hacerlo a través de result
     const responseSuccess = {
       cardURL: `https://project-promo-r-module-4-team-8-production.up.railway.app/card/${result.lastInsertRowid}`,
       success: true,
