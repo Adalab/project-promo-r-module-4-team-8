@@ -1,4 +1,4 @@
-![Minions landing](./docs/static/media/minion-landing.jpg)
+![Minions landing](./web/docs/static/media/minion-landing.jpg)
 
 # Welcome to Awesome Profile Cards Minion Edition!
 
@@ -10,15 +10,15 @@ With a fun theme based on Minion characters, you will be able to create your own
 
 1. Choose the colours of your card based on 3 different palettes.
 
-![Minions Design](./docs/static/media/minion-create-section.jpg)
+![Minions Design](./web/docs/static/media/minion-create-section.jpg)
 
 2. Add all the relevant information about your profile, including links to your different social networks (Email, Linkedin, Twitter and GitHub).
 
-![Minions Fill](./docs/static/media/minion-fill.jpg)
+![Minions Fill](./web/docs/static/media/minion-fill.jpg)
 
 3. Share via link and twitter your card!
 
-![Minions Share](./docs/static/media/minion-share.jpg)
+![Minions Share](./web/docs/static/media/minion-share.jpg)
 
 ## 🛠 Used Technologies:
 
